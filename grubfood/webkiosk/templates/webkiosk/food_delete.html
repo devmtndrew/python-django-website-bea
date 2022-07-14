@@ -1,0 +1,16 @@
+{% extends 'webkiosk/base_template.html' %}
+
+{% block pagetitle %} GrubFood - Delete {{food.name}} {% endblock %}
+
+{% block mainnav %}{% endblock %} <!-- deletes navbar -->
+
+{% block maincontent %}
+<h2>Delete {{ food.name }}</h2>
+
+<form method="post">
+    {% csrf_token %}
+    <p>Are you sure you want to delete <b>{{ food.name }}</b> ?</p>
+    <a href="{% url 'webkiosk:food-list' %}">Cancel</a>
+    <input type="submit" value="Yes">
+</form>
+{% endblock %}

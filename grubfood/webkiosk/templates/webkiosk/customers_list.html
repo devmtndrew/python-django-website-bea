@@ -1,0 +1,15 @@
+{% extends 'webkiosk/base_template.html' %}
+
+{% block pagetitle %} GrubFood - Customer List {% endblock %}
+
+{% block maincontent %}
+<h2>Customers List</h2>
+
+<ul>
+    {% for customer in customerslist %}
+    <li>Name: {{customer.firstname}} {{customer.lastname}}</li> 
+    <li>Address: {{customer.address}}, {{customer.city}}</li>
+    {% endfor %}
+</ul>
+
+{% endblock %}
