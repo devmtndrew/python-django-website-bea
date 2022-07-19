@@ -1,0 +1,44 @@
+{% load static %}
+{% block nameofblock %}
+
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <title>{% block pagetitle %}{% endblock %}</title>
+        <link rel="stylesheet" href="{% static 'webkiosk/styles/crud.css' %}?{% now 'U' %}">
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    </head>
+
+    {% block mainnav %}
+    <nav>
+        {%  include 'webkiosk/navbar.html' %}
+        <div class="container-fluid">
+    </nav>
+    {% endblock %}
+
+    <body>
+        <header>
+            <img src="{% static 'webkiosk/images/jabrewsbiglogo.png' %}">
+            <h2>Brew your sorrows away!</h2>
+        </header>
+        <main>
+                
+        {% block maincontent %}
+
+        {% endblock %}
+        </main>
+    </body>
+
+    <footer>
+		<h5>(c) Jabrews 2022</h5>
+		<ul>
+			<li>Contact Us</li>
+			<li>Email Us</li>
+			<li>About Us</li>
+		</ul>
+	</footer>
+    
+</html>
+
+{% endblock %}

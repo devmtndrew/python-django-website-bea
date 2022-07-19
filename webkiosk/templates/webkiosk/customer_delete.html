@@ -1,0 +1,15 @@
+{% extends 'webkiosk/base_template.html' %}
+
+{% block pagetitle %} JaBrews - Delete {{food.name}} {% endblock %}
+
+
+{% block maincontent %}
+<h2>Delete {{ customer.firstname }} {{ customer.lastname }}</h2>
+
+<form method="post">
+    {% csrf_token %}
+    <p>Are you sure you want to delete <b>{{ customer.firstname }} {{customer.lastname}}</b>?</p>
+    <a href="{% url 'webkiosk:customers-list' %}">Cancel</a>
+    <input type="submit" value="Yes">
+</form>
+{% endblock %}

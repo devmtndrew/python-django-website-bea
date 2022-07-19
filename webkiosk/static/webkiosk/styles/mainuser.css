@@ -1,0 +1,26 @@
+body {
+    background-color: antiquewhite;
+}
+
+.hello-msg{
+    font-size: 18px;
+    color: antiquewhite;
+    margin-right: 20px;
+  }
+
+
+.center {
+    width:100%;
+}
+
+#content {
+    margin: 50px;
+}
+
+footer {
+    margin:10px;
+}
+
+h1 {
+    font-size: 50px;
+}

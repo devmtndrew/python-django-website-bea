@@ -1,0 +1,60 @@
+{%  extends 'webkiosk/main_home2.html' %}
+{% block content %}
+{%  include 'webkiosk/status.html' %}
+
+<div class="row">
+	<div class="col-md">
+		<div class="card card-body">
+			<table class="table table-sm">
+				<tr>
+					<th>Product (Name, Description, Price in PHP)</th>
+					<th>Quantity</th>
+					<th>Payment Mode</th>
+					<th>Date Ordered</th>
+					<th>Edit Order</th>
+					<th>Delete Order</th>
+				</tr>
+
+				{% for order in orders %}
+
+				<tr>
+					<td>{{order.food}}</td>
+					<td>{{order.quantity}}</td>
+					<td>{{order.paymentmode}}</td>
+					<td>{{order.orderdatetime}}</td>
+					<td><a href="{% url 'webkiosk:edit-order-2' order.id%}">Edit</a></li></td>
+					<td><a href="{% url 'webkiosk:delete-order-2' order.id%}">Delete</a></td>
+				</tr>
+				{% endfor %}
+
+			</table>
+		</div>
+	</div>
+</div>
+
+
+<div class="row">
+	<div class="col-md">
+		<div class="card card-body">
+			<table class="table table-sm">
+				<ul>
+					
+	<p><b>First name:</b> {{ user.customer.firstname }}</p>
+	<p><b>Last name:</b> {{ user.customer.lastname }}</p>
+	<p><b>Username:</b> {{ user.customer.user }}</p>
+
+	<p><b>Address:</b> {{ user.customer.address }}</p>
+	
+	<p><b>City:</b> {{ user.customer.city }}</p>
+	
+	<p><a href="{% url 'webkiosk:customer-update-2' user.id %}">Edit Profile</a></p>
+
+</ul>
+
+
+			</table>
+		</div>
+	</div>
+</div>
+
+{% endblock content %}
